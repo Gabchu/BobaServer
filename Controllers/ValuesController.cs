@@ -13,13 +13,12 @@ namespace BobaServer.Controllers
 		
 		// GET: api/<ValuesController>
 		[HttpGet]
-		public IEnumerable<Order> Get()
+		public List<Order> Get()
 		{
 			return OrderService.orders;
 		}
 
 		[HttpPost]
-
 		public List<Order> Post(Order order)
 		{
 			OrderService.orders.Add(order);
