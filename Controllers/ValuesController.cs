@@ -18,9 +18,9 @@ namespace BobaServer.Controllers
 		}
 
 		[HttpPost]
-		public List<ClientFinalOrder> Post([FromBody] ClientFinalOrder orders)
+		public void Post([FromBody] ClientFinalOrder orders)
 		{
-			return OrderService.AddActiveOrders();
+			OrderService.AddActiveOrders();
 		}
 	}
 }
