@@ -20,7 +20,7 @@ namespace BobaServer.Controllers
 		[HttpPost]
 		public void Post([FromBody] ClientFinalOrder orders)
 		{
-			OrderService.AddActiveOrders();
+			OrderService.AddActiveOrders(orders);
 		}
 	}
 }

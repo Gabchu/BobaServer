@@ -7,9 +7,9 @@ namespace BobaServer.Services
 	{
 		public static List<ClientFinalOrder> activeOrders = new();
 		public static ClientFinalOrder ClientFinalOrder { get; set; }
-		public static List<ClientFinalOrder> AddActiveOrders()
+		public static List<ClientFinalOrder> AddActiveOrders(ClientFinalOrder clientFinalOrder)
 		{
-			activeOrders.Add(ClientFinalOrder);
+			activeOrders.Add(clientFinalOrder);
 			return activeOrders;
 		}
 	}
