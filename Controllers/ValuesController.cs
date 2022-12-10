@@ -10,18 +10,20 @@ namespace BobaServer.Controllers
 	[ApiController]
 	public class ValuesController : ControllerBase
 	{
+		
 		// GET: api/<ValuesController>
 		[HttpGet]
-		public ActiveOrder Getorder()
+		public IEnumerable<Order> Get()
 		{
-			return OrderService.order;
+			return OrderService.orders;
 		}
 
 		[HttpPost]
 
-		public List<ActiveOrder> Post(List<ActiveOrder> activeorder)
+		public List<Order> Post(Order order)
 		{
-			return OrderService.Add(activeorder);
+			OrderService.orders.Add(order);
+			return OrderService.orders;
 		}
 	}
 }

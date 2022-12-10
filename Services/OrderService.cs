@@ -1,16 +1,16 @@
-﻿using BobaServer.Models;
+﻿using BobaServer.Controllers;
+using BobaServer.Models;
 
 namespace BobaServer.Services
 {
 	public static class OrderService
 	{
-		public static ActiveOrder order;
-		public static int LatestOrderID { get; set; }
-		public static List<ActiveOrder> Add(List<ActiveOrder> activeorders)
+		public static Order order { get; set; }
+		public static List<Order> orders { get; set; } = new();
+		public static List<Order> Add(Order order)
 		{
-			order.OrderID = ++LatestOrderID;
-			activeorders.Add(order);
-			return activeorders;
+			orders.Add(order);
+			return orders;
 		}
 	}
 }
