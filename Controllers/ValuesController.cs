@@ -12,16 +12,15 @@ namespace BobaServer.Controllers
 	{
 		// GET: api/<ValuesController>
 		[HttpGet]
-		public List<ClientFinalOrder> get()
+		public List<ClientFinalOrder> Get()
 		{
 			return OrderService.activeOrders;
 		}
 
 		[HttpPost]
-		public List<Order> Post(List<Order> orders)
+		public List<ClientFinalOrder> Post([FromBody] ClientFinalOrder orders)
 		{
-			OrderService.orders.Add(orders);
-			return OrderService.orders;
+			return OrderService.AddActiveOrders();
 		}
 	}
 }
